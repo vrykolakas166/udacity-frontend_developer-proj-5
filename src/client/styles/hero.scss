@@ -1,0 +1,148 @@
+// Common
+@import "./variables";
+
+@keyframes showoff {
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes fadeIn {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOff {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+}
+
+@keyframes crossFlying {
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(140vw);
+    opacity: 0;
+  }
+}
+
+// using in js
+@keyframes contentChanging {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+@keyframes backgroundColorChanging {
+  100% {
+    color: $background-color_1;
+  }
+}
+@keyframes pathFillChanging {
+  100% {
+    fill: $background-color_1;
+  }
+}
+@keyframes colorChanging {
+  100% {
+    color: $color_1;
+  }
+}
+
+body {
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url("https://th.bing.com/th/id/R.9f3e83fa15fe85f7932ed4f8cfe7ce79?rik=GYtif4hjQzBFDg&riu=http%3a%2f%2fwww.pixelstalk.net%2fwp-content%2fuploads%2f2016%2f08%2fTravel-Images-For-Desktop.jpg&ehk=urBwMZmbv1mdOGjeVkvPn1Sy%2b4Jczyqp4oF8Oy80j9I%3d&risl=&pid=ImgRaw&r=0");
+    background-size: cover 100%;
+    background-repeat: no-repeat;
+    opacity: 0;
+    animation: fadeIn 2.5s forwards;
+    animation-delay: 9.5s;
+  }
+}
+
+#hero {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .word-container {
+    display: grid;
+    max-height: fit-content;
+    grid-template-rows: 30% 20% 20%;
+    grid-template-areas: "word1" "word2" "word3";
+    overflow: hidden;
+  }
+}
+.word1 {
+  grid-area: word1;
+  font-size: 15vw;
+  font-weight: 900;
+  background-color: $background-color_1;
+  z-index: 3;
+  transform: translateX(-100vw);
+  animation: showoff 1.5s forwards;
+  animation-delay: 0.25s;
+  text-transform: uppercase;
+  user-select: none;
+}
+.word2 {
+  grid-area: word2;
+  font-size: 9.75vw;
+  font-weight: 900;
+  background-color: $background-color_1;
+  z-index: 2;
+  transform: translateY(-100vh);
+  animation: showoff 2.5s forwards;
+  animation-delay: 0.75s;
+  text-transform: uppercase;
+  user-select: none;
+}
+.word3 {
+  grid-area: word3;
+  font-size: 9.75vw;
+  font-weight: 900;
+  background-color: $background-color_1;
+  z-index: 1;
+  transform: translateX(-100vw);
+  animation: showoff 1.25s forwards;
+  animation-delay: 3s;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.airplane {
+  height: 8vh;
+  z-index: 4;
+  transform: translateX(-140vw) translateY(-50px);
+  position: absolute;
+  opacity: 0;
+  // handle by js
+}
+
+@media (min-width: 1500px) {
+  .airplane {
+    height: 8vh;
+    z-index: 4;
+    transform: translateX(-140vw) translateY(-50px);
+    position: absolute;
+    opacity: 0;
+    bottom: 0;
+  }
+}

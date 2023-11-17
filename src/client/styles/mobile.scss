@@ -1,0 +1,178 @@
+@media (max-width: 1500px) {
+  section.travel-section {
+    .weather-forecast-container {
+      overflow-x: scroll;
+    }
+
+    .weather-forecast {
+      justify-content: start !important;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  form#searchForm {
+    flex-direction: column;
+    input {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  header {
+    grid-template-columns: 30% 70%;
+
+    li {
+      a {
+        padding: 0.5em 1em;
+      }
+    }
+  }
+
+  .travel-page {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2em;
+  }
+  .sidebar {
+    ol {
+      display: none;
+    }
+    .toggle-show-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  section {
+    .card-list {
+      justify-content: center;
+    }
+
+    .weather-forecast-container {
+      overflow: initial !important;
+    }
+
+    .weather-forecast {
+      width: 100% !important;
+      flex-direction: column !important;
+      justify-content: center;
+
+      .weather-forecast-item {
+        flex-direction: row !important;
+        text-wrap: nowrap;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+        .forecast-time {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .forecast-condition {
+          display: flex;
+          flex-direction: column;
+          align-items: start;
+
+          .temperatures {
+            gap: 0.5em !important;
+            flex-direction: row !important;
+            align-items: start !important;
+
+            .temp_separator {
+              display: block !important;
+            }
+          }
+        }
+      }
+    }
+  }
+  .card {
+    width: 30em;
+    gap: 1em;
+  }
+}
+
+@media (max-width: 425px) {
+  header {
+    grid-template-columns: 60% 40%;
+    nav {
+      grid-template-columns: 100%;
+      #btnMenu {
+        display: flex;
+        grid-area: 1/1;
+        justify-content: end;
+        align-items: center;
+      }
+
+      ul {
+        opacity: 0;
+        grid-area: 1/1;
+        position: fixed;
+        height: 100%;
+        width: 0%;
+        flex-direction: column;
+        right: 0;
+        margin-top: -1.25em;
+        background-color: $background-color_1;
+        justify-content: start;
+        transition: all 0.5s ease-out;
+
+        li {
+          padding: 1em 0;
+
+          &:hover {
+            background-color: rgba(0, 0, 0, 0.2);
+          }
+        }
+      }
+
+      &:hover {
+        ul {
+          opacity: 1;
+          width: 40%;
+        }
+      }
+    }
+  }
+
+  .airplane {
+    height: 6vh;
+  }
+
+  .forecast-condition {
+    em {
+      display: none;
+    }
+  }
+
+  .card {
+    width: 20em;
+    gap: 0.5em;
+  }
+}
+
+@media (max-width: 400px) {
+  .weather-forecast-item {
+    img {
+      width: 20px;
+    }
+  }
+
+  .forecast-condition {
+    em {
+      display: none;
+    }
+  }
+
+  .temperatures {
+    font-size: 0.8em !important;
+  }
+
+  .card {
+    width: 20em;
+    gap: 0.5em;
+  }
+}

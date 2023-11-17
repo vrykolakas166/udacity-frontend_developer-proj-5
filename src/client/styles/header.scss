@@ -1,0 +1,114 @@
+@keyframes logoAnimation {
+  0% {
+    content: "LEVART";
+  }
+  25% {
+    content: "TEVARL";
+  }
+  50% {
+    content: "TRVAEL";
+  }
+  75% {
+    content: "TRAVLE";
+  }
+  100% {
+    content: "TRAVEL";
+  }
+}
+
+header {
+  position: sticky;
+  top: 0;
+  display: grid;
+  width: 100vw;
+  height: 4em;
+  grid-template-columns: 20% 80%;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+  .logo {
+    display: flex;
+    gap: 0.25rem;
+    justify-content: start;
+    align-items: baseline;
+    font-size: 1.5em;
+    font-weight: bold;
+    a {
+      position: relative;
+      text-decoration: none;
+      display: flex;
+      gap: 0.25rem;
+      color: $color_1;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        width: 0;
+        height: 0.2rem;
+        background-color: $color_2;
+        opacity: 0;
+        transition: all 1.25s ease-out;
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+      a {
+        :nth-child(n) {
+          transition: all 0.75s ease;
+        }
+        :nth-child(1) {
+          transition-delay: 0s;
+        }
+        :nth-child(2) {
+          transition-delay: 0.5s;
+        }
+        :nth-child(3) {
+          transition-delay: 1s;
+        }
+        :nth-child(4) {
+          transition-delay: 1.25s;
+        }
+        :nth-child(5) {
+          transition-delay: 0.75s;
+        }
+        :nth-child(6) {
+          transition-delay: 0.25s;
+        }
+        &::before {
+          width: 100%;
+          opacity: 1;
+        }
+      }
+    }
+  }
+  nav {
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+    #btnMenu {
+      grid-area: 1/2;
+      display: none;
+    }
+
+    ul {
+      display: flex;
+      grid-area: 1/2;
+      flex-direction: row;
+      justify-content: end;
+      li {
+        font-weight: 600;
+      }
+    }
+  }
+  li {
+    a {
+      padding: 1em 2em;
+    }
+  }
+}
+.scroll {
+  background-color: $background-color_1;
+  box-shadow: 0px 3px 7px 1px rgba(0, 0, 0, 0.2);
+}
